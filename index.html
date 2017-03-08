@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple chat</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <h1>Welcome to Online Customer Support!</h1>
+    <p>Thank you <span id="name"></span> For choosing us! A representative will be right with you.</p>
+    <p>Do not press Enter to submit your message or else the page will reset!</p>
+    <form>
+      Message: <input id="chat" type="text" name="message"/>
+      <button id="send" onclick="appendMe()" type="button">Send</button>
+      <button type="button">End Chat</button>
+    </form>
+    <p id="messagelocation"></p>
+
+    </script>
+    <script>
+    var p = document.getElementById("messagelocation");
+    var name = prompt("What is your name?");
+    var computerName = "Katie";
+
+
+
+    function appendMe(){
+      var message = document.getElementById("chat").value;
+      p.innerHTML += (name + ": " + message + "<br />")
+    }
+
+
+    var computerInputHello = function() {
+      p.innerHTML += (computerName + ": Hello " + name + ". How can I help you?<br />");
+    }
+
+    var computerInputDetails = function() {
+      p.innerHTML += (computerName + ": Thank you for your question. Could you please provide more details to your problem? <br />");
+    }
+
+    var computerInputHelp = function() {
+      p.innerHTML += (computerName + ": Okay let's get that solved as soon as possible. I will try my best to find a solution.\n Please bear with me...<br />");
+    }
+
+    var computerInputBirth = function() {
+      p.innerHTML += (computerName + ": It seems we need to make some updates to your account. \n Could you please provide me with your date of birth?<br />");
+    }
+
+    var computerInputSecurity = function() {
+      p.innerHTML += (computerName + ": Thank you " + name + ". This is just for security purposes. Please bear with me. <br />");
+    }
+
+    var computerInputIssue = function() {
+      p.innerHTML += (computerName + ": It seems we have fixed your issue. Please test it out and confirm that it is working. \n Is there anything else I assist you with? <br />");
+    }
+
+    var computerInputThanks = function() {
+      p.innerHTML += (computerName + ": Okay " + name + ". Thank you so much for choosing us! I hope you have a great day! <br />");
+    }
+
+    var computerInputExperience = function() {
+      p.innerHTML += ("Did you enjoy your experience? Please give it a rating at http://carlos-mccrary.com");
+    }
+
+
+
+
+    var hello = setTimeout(computerInputHello, 10000);
+    var details = setTimeout(computerInputDetails, 40000);
+    var help = setTimeout(computerInputHelp, 80000);
+    var birth = setTimeout(computerInputBirth, 120000);
+    var security = setTimeout(computerInputSecurity, 160000);
+    var issue = setTimeout(computerInputIssue, 200000);
+    var thanks = setTimeout(computerInputThanks, 240000);
+    var experience = setTimeout(computerInputExperience, 245000);
+    document.getElementById("name").innerHTML = name;
+    </script>
+  </body>
+</html>
